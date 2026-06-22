@@ -47,7 +47,7 @@ class ProductServiceIntegrationTest {
 
         // ASSERT
         assertThat(result.getId()).isEqualTo(1L);
-        assertThat(result.getName()).isEqualTo("Auriculares Sony");
+        assertThat(result.getName()).isEqualTo("Auriculares Falsos");
         verify(productRepository, times(1)).save(any(Product.class));
     }
 
