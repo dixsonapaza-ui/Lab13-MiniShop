@@ -14,11 +14,14 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
+    private static final double MIN_PRICE_THRESHOLD = 0.0;
+    private static final int MIN_STOCK_THRESHOLD = 0;
+
     public Product save(Product product) {
-        if (product.getPrice() <= 0) {
+        if (product.getPrice() <= MIN_PRICE_THRESHOLD) {
             throw new IllegalArgumentException("El precio debe ser mayor a cero");
         }
-        if (product.getStock() < 0) {
+        if (product.getStock() < MIN_STOCK_THRESHOLD) {
             throw new IllegalArgumentException("El stock no puede ser negativo");
         }
         return productRepository.save(product);
