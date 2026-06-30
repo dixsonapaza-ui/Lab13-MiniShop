@@ -1,0 +1,7 @@
+HTTP/1.1 201
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 30 Jun 2026 20:09:11 GMT
+Connection: close
+
+{"id":12,"name":"","price":15.0,"stock":5}

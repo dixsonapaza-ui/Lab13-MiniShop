@@ -1,0 +1,8 @@
+HTTP/1.1 404
+Vary: Origin
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 30 Jun 2026 20:09:11 GMT
+Connection: close
+
+{"timestamp":"2026-06-30T20:09:11.175+00:00","status":404,"error":"Not Found","path":"/api/orders"}

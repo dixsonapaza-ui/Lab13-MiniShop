@@ -1,0 +1,7 @@
+HTTP/1.1 500
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 34
+Date: Tue, 30 Jun 2026 20:09:11 GMT
+Connection: close
+
+Producto no encontrado con id: 999
