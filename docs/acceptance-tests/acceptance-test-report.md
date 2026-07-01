@@ -183,7 +183,7 @@ A continuación se detallan las tablas de ejecución de los 8 escenarios de prue
 | **Pasos ejecutados** | POST a `/api/products` con JSON `{ "name": "", "price": 15.0, "stock": 5 }` |
 | **Resultado esperado** | HTTP 400 Bad Request debido a la falta de nombre (campo obligatorio). |
 | **Resultado obtenido** | HTTP 201 Created retornando el producto creado con ID 12 y el nombre vacío ("name": ""). El sistema guardó el registro omitiendo la validación de campo obligatorio. |
-| **Estado** | Parcial / Fallido |
+| **Estado** | Fallido |
 | **Observación** | La aplicación no realiza validaciones a nivel de controlador (@Valid) ni restricciones estrictas en la entidad Java, permitiendo guardar productos sin nombre en la base de datos (HTTP 201). Registrado como DEF-02. |
 | **Evidencia** | ![Evidencia CA-05-02](evidencias/evidencia_img_06.png) |
 
@@ -267,8 +267,8 @@ Se consolidan los resultados de la ejecución manual de pruebas de aceptación:
 | **HU-02: Consultar producto** | 1 | 1 | 0 | 0 |
 | **HU-03: Crear pedido** | 1 | 0 | 1 | 0 |
 | **HU-04: Manejo de errores** | 1 | 0 | 0 | 1 |
-| **HU-05: Registrar producto** | 3 | 2 | 0 | 1 |
-| **TOTAL** | **8** | **5** | **1** | **2** |
+| **HU-05: Registrar producto** | 3 | 2 | 1 | 0 |
+| **TOTAL** | **8** | **5** | **2** | **1** |
 
 ---
 
@@ -300,9 +300,9 @@ Se documentan los defectos identificados que impiden la aceptación sin condicio
 ### Resultados Obtenidos
 * **Total Escenarios**: 8
 * **Aprobados**: 5
-* **Fallidos**: 1 (HU-03 - No implementada)
-* **Parciales**: 2 (Manejo de errores e ingresos incompletos)
-* **Defectos de severidad alta**: 1 (Falta de validaciones críticas en el registro)
+* **Fallidos**: 2 (HU-03 - No implementada y HU-05 - Registro sin validaciones)
+* **Parciales**: 1 (HU-04 - Manejo de errores)
+* **Defectos de severidad alta**: 1 (DEF-02: Registro sin nombre en la entidad)
 
 ### Decisión del Product Owner
 * **Veredicto**:

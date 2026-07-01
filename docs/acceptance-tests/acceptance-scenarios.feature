@@ -27,7 +27,7 @@ Requisito: Pruebas de Aceptación del Sistema MiniShop
   Escenario: CA-04-01 - Consultar un producto inexistente
     Dado que no existe ningún producto con el ID 999
     Cuando el cliente envía una petición GET a "/api/products/999"
-    Entonces el sistema debe responder con un código de estado HTTP 500
+    Entonces el sistema debe responder con un código de estado HTTP 404
     Y la respuesta debe contener un mensaje explicativo indicando que el producto no existe
 
   Escenario: CA-05-01 - Registrar un nuevo producto con datos válidos
@@ -40,7 +40,7 @@ Requisito: Pruebas de Aceptación del Sistema MiniShop
   Escenario: CA-05-02 - Registrar un producto con datos incompletos
     Dado que los detalles del producto tienen el nombre vacío, precio 15.0 y stock 5
     Cuando el administrador envía una petición POST a "/api/products" con el campo de nombre nulo o vacío
-    Entonces el sistema debe responder con un código de estado HTTP 500 o fallar la validación
+    Entonces el sistema debe responder con un código de estado HTTP 400
     Y el catálogo de productos debe mantenerse sin cambios
 
   Escenario: CA-05-03 - Consultar persistencia del producto registrado
